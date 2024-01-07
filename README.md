@@ -1,1 +1,9 @@
 # stopwatch
+
+This Stopwatch app was created as part of the codingNinjas JS test. The app features buttons for starting, stopping, and resetting the timer, along with three spans to display the timer digits.
+
+Approach HTML File In the HTML file, buttons and three span tags were created to manage the timer display. Event listeners were added to each button to trigger the corresponding functions: start, stop, and reset.
+
+JavaScript File Six elements from the HTML (three buttons and three spans) were accessed using getElementById. Event listeners for 'click' events were added to each button, calling the respective functions.
+
+Global Variables minuteText secondText milliSecondText milliSeconds = 0 (initially set to 0 for accumulating results) running = false (initially set to false to track the timer's running state) timer (for storing the setInterval reference) Start Button On 'start' button click, the start function is triggered. If not already running, the running variable is set to true. The setInterval method is called, executing the increase function every 10 milliseconds. In the increase function, the millisecond count is increased by 10, and the displayTime function is called. Display Time Function Calculates seconds by dividing milliSeconds by 1000 and flooring the result. Calculates remaining milliseconds using the modulo operator (milliSeconds % 1000). Calculates minutes by dividing seconds by 60. Calculates remaining seconds using the modulo operator (seconds % 60). Formats and sets the result in the minuteText, secondText, and milliSecondText span variables. Stop Button On 'stop' button click, the stop function is triggered. The clearInterval method is called, clearing the current timer. The running variable is set to false. Reset Button On 'reset' button click, the reset function is triggered. The clearInterval method is called to clear the timer. All textContent is reset to '00'.
